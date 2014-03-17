@@ -1,0 +1,29 @@
+CS176 Implementation Assignment #1
+Burrows-Wheeler Transform
+
+Specifications
+-----------------
+Your program should take three arguments:
+
+1) a flag indicating whether to encode (-bwt) or decode (-ibwt)
+2) an input FASTA file
+3) an output FASTA file
+
+Example
+-----------------
+Using the supplied FASTA file (sonnet1.FASTA), the following command-line options should be supported.
+
+-bwt sonnet1.FASTA sonnet1.bwt.FASTA
+-ibwt sonnet1.bwt.FASTA sonnet1.ibwt.FASTA
+
+And using the command lines should produce FASTA files (sonnet1.bwt.FASTA and sonnet1.ibwt.FASTA) that are identical (disregarding comment line) to those supplied. Moreover, you should check that sonnet1.ibwt.FASTA is identical (disregarding comment line) to sonnet1.FASTA.
+
+Caveats
+-----------------
+1) Please do your best to make your program robust to trivialities such as empty lines, or lack thereof, following the last (non-empty) line of the FASTA file.  See http://en.wikipedia.org/wiki/FASTA_format for the details of FASTA format.
+
+2) Please wrap your output FASTA files at exactly 80 characters.  That is, each line except the comment line and the final (non-empty) line of the output FASTA file should contain 80 characters.  This allows us to use simple tools like diff to check correctness.
+
+3) The input FASTA file may have fewer than 80 characters per line. 
+ 
+4) Your implementation should be case sensitive, with upper-case letters lexicographically smaller than lower-case letters
